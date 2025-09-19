@@ -28,7 +28,7 @@ const Contact = () => {
               LinkedIn
             </a>
             <a 
-              href="https://github.com/srishtikhosla"
+              href="https://github.com/02siri"
               className="flex items-center gap-3 px-6 py-3 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-700"
             >
               <Github size={20} />
