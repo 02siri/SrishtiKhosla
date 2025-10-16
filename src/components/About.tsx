@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, GraduationCap, Code} from 'lucide-react';
+import { MapPin, GraduationCap} from 'lucide-react';
 import Image from 'next/image';
 
 const About = () => {
@@ -31,10 +31,6 @@ const About = () => {
                 <div className="flex items-center gap-3">
                   <GraduationCap size={20} className="text-white" />
                   <span className="text-gray-300">B.Sc Computer Science, RMIT University</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Code size={20} className="text-white" />
-                  <span className="text-gray-300">3 years of development experience</span>
                 </div>
               </div>
             </div>

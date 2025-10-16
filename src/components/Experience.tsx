@@ -6,7 +6,7 @@ const Experience = () => {
   const experience = [
     {
       id: 1,
-      role: "Software Development Intern",
+      role: "Software Developer",
       description: "Team Leader, Scrum Master & Dev Team Member",
       company: "Phi Technologies",
       duration: "March 2025 - June 2025",
