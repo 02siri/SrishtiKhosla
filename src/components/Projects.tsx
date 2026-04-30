@@ -1,69 +1,12 @@
 import React, { useState } from 'react';
-import { Github, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  tech: string[];
-  github: string;
-  live?: string;
-  details: string;
-}
+import Link from 'next/link';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import ProjectVisual from './ProjectVisual';
+import { projects } from '../data/projects';
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
-
-  const projects: Project[] = [
-    {
-      id: 1,
-      title: "LoopedIn",
-      description: "Serverless music subscription web application with AWS cloud architecture",
-      image: "/projects/LoopedIn/LI_Home.png",
-      tech: ["Next.js","React.js","TypeScript","HTML", "Tailwind CSS", "Node.js","AWS S3","AWS DynamoDB","AWS APIGateway","AWS Lambda","AWS EC2"],
-      github: "https://github.com/02siri/LoopedIn",
-      live: "https://looped-in-pi.vercel.app/",
-      details: "A sophisticated serverless music subscription platform built with AWS services including Lambda, DynamoDB, and S3. Features real-time subscription management, user authentication, flexible metadata queries, and scalable cloud architecture with automatic partitioning and horizontal scalability."
-    },
-    {
-      id: 2,
-      title: "TeachTeam",
-      description: "Educational platform for collaborative learning and team management",
-      image: "/projects/TeachTeam/TeachTeam.png",
-      tech: ["Next.js","React.js","TypeScript","HTML", "Tailwind CSS","Express.js", "Node.js", "MySQL", "TypeORM", "GraphQL", "Jest"],
-      github: "https://github.com/02siri/TeachTeam",
-      details: "An educational platform designed to facilitate collaborative learning environments. Features team formation, project management tools, assignment tracking, and communication features for students and educators."
-    },
-    {
-      id: 3,
-      title: "BurritoKing",
-      description: "Restaurant management and ordering system with modern UI",
-      image: "/projects/BurritoKing/BurritoKing.png",
-      tech: ["Java", "JavaFX", "SceneBuilder", "JDK", "JDBC", "SQLite", "JUnit"],
-      github: "https://github.com/02siri/BurritoKing",
-      details: "A comprehensive restaurant management system featuring online ordering, menu management, order tracking, and customer management. Built with modern web technologies for optimal user experience."
-    },
-    {
-      id: 4,
-      title: "AirStay",
-      description: "Accommodation booking platform inspired by modern hospitality needs",
-      image: "/projects/AirStay/AirStay.png",
-      tech: ["HTML","Tailwind CSS", "Express.js", "Node.js", "MongoDB"],
-      github: "https://github.com/02siri/AirStay",
-      details: "A full-stack accommodation booking platform with property listings, booking management, user authentication, search and filtering capabilities, and responsive design for seamless booking experiences."
-    },
-    {
-      id: 5,
-      title: "VetCare",
-      description: "Veterinary clinic management system for pet healthcare services",
-      image: "/projects/VetCare/VetCare.JPG",
-      tech: ["Java","BootStrap","SpringBoot","Maven","MySQL","Flyway","Docker","JDBC","JUnit"],
-      github: "https://github.com/02siri/VetCare",
-      details: "A comprehensive veterinary clinic management system featuring appointment scheduling, patient records management, treatment tracking, and billing integration for efficient pet healthcare services."
-    }
-  ];
+  const currentProject = projects[currentProjectIndex];
 
   const nextProject = () => {
     setCurrentProjectIndex((prev) => (prev + 1) % projects.length);
@@ -73,157 +16,96 @@ const Projects = () => {
     setCurrentProjectIndex((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
-  const ProjectModal = ({ project, onClose }: { project: Project | null; onClose: () => void }) => {
-    if (!project) return null;
+  return (
+    <section id="projects" className="py-20">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="mx-auto max-w-3xl text-center">
+          
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white md:text-5xl">
+            Projects
+          </h2>
+          
+        </div>
 
-    return (
-      <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50">
-        <div className="bg-gray-800 rounded-lg max-w-2xl w-full max-h-90vh overflow-y-auto border border-gray-700">
-          <div className="relative">
-            <img src={project.image} alt={project.title} className="w-full h-64 object-cover rounded-t-lg" />
-            <button 
-              onClick={onClose}
-              className="absolute top-4 right-4 bg-gray-900 text-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg hover:bg-gray-700 transition-colors"
+        <div className="relative mt-14 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-4 shadow-[0_30px_120px_rgba(15,23,42,0.28)] backdrop-blur-sm md:p-6">
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <Link
+              href={`/projects/${currentProject.slug}`}
+              className="block cursor-pointer"
             >
-              ×
-            </button>
-          </div>
-          <div className="p-6">
-            <h3 className="text-2xl font-bold mb-4 text-white">{project.title}</h3>
-            <p className="text-gray-300 mb-6">{project.details}</p>
-            
-            <div className="mb-6">
-              <h4 className="font-semibold mb-2 text-white">Technologies Used:</h4>
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((tech, index) => (
-                  <span key={index} className="px-3 py-1 bg-slate-500 rounded-sm text-sm">
+              <ProjectVisual project={currentProject} compact />
+            </Link>
+
+            <div className="px-1 md:px-2">
+              <Link
+                href={`/projects/${currentProject.slug}`}
+                className="group block cursor-pointer"
+              >
+                <h3 className="text-3xl font-semibold text-white transition group-hover:text-cyan-100 md:text-4xl">
+                  {currentProject.title}
+                </h3>
+                <p className="mt-3 text-lg leading-8 text-slate-200">
+                  {currentProject.tagline}
+                </p>
+                <p className="mt-4 max-w-2xl text-base leading-8 text-slate-300">
+                  {currentProject.description}
+                </p>
+              </Link>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {currentProject.tech.slice(0, 7).map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full border border-white/10 bg-slate-900/70 px-3 py-2 text-sm text-slate-200"
+                  >
                     {tech}
                   </span>
                 ))}
               </div>
-            </div>
 
-            <div className="flex gap-4">
-              <a 
-                href={project.github} 
-                className="flex items-center gap-2 px-4 py-2 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-700 transition-colors"
-              >
-                <Github size={20} />
-                View Code
-              </a>
-              {project.live && (
-                <a 
-                  href={project.live}
-                  className="flex items-center gap-2 px-4 py-2 border border-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  href={`/projects/${currentProject.slug}`}
+                  className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-400/10 px-5 py-3 text-sm font-medium text-cyan-100 transition hover:scale-[1.02] hover:border-cyan-200/50 hover:bg-cyan-300/15"
                 >
-                  <ExternalLink size={20} />
-                  Live
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  return (
-    <section id="projects" className="py-20">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16 text-transparent">Featured Projects</h2>
-        
-        <div className="relative">
-          <div className="overflow-hidden rounded-lg">
-            <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentProjectIndex * 100}%)` }}>
-              {projects.map((project) => (
-                <div key={project.id} className="w-full flex-shrink-0">
-                  <div className="bg-slate-800/80 rounded-lg shadow-lg hover:shadow-2xl transition-all overflow-hidden border border-gray-700 mx-2">
-                    <div className="md:flex">
-                      <div className="md:w-1/2">
-                        <div className="relative overflow-hidden h-64 md:h-full">
-                          <img 
-                            src={project.image} 
-                            alt={project.title}
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-r from-pink-600/20 to-purple-600/20"></div>
-                        </div>
-                      </div>
-                      <div className="md:w-1/2 p-8">
-                        <h3 className="text-2xl font-bold mb-4 text-white">{project.title}</h3>
-                        <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
-                        
-                        <div className="flex flex-wrap gap-2 mb-6">
-                          {project.tech.map((tech, index) => (
-                            <span key={index} className="px-3 py-1 bg-slate-500 rounded-sm text-sm">
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                        
-                        <div className="flex gap-4">
-                          <button 
-                            onClick={() => setSelectedProject(project)}
-                            className="px-6 py-2 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-700 hover:border-slate-900 transition-all transform hover:scale-105 cursor-pointer"
-                          >
-                            View Details
-                          </button>
-                          <a 
-                            href={project.github}
-                            className="p-2 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-700 hover:border-slate-900 transition-colors cursor-pointer"
-                          >
-                            <Github size={20} />
-                          </a>
-                          {project.live && (
-                            <a 
-                              href={project.live}
-                              className="p-2 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-700 hover:border-slate-900 transition-colors cursor-pointer"
-                            >
-                              <ExternalLink size={20} />
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+                  View Project
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
             </div>
           </div>
 
-          {/* Carousel Controls */}
           <button 
             onClick={prevProject}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-colors border border-gray-600"
+            className="absolute left-3 top-[36%] cursor-pointer rounded-full border border-white/10 bg-slate-950/75 p-3 text-white shadow-lg backdrop-blur-sm transition hover:bg-slate-900 md:left-5"
+            aria-label="Previous project"
           >
             <ChevronLeft size={24} />
           </button>
           <button 
             onClick={nextProject}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-colors border border-gray-600"
+            className="absolute right-3 top-[36%] cursor-pointer rounded-full border border-white/10 bg-slate-950/75 p-3 text-white shadow-lg backdrop-blur-sm transition hover:bg-slate-900 md:right-5"
+            aria-label="Next project"
           >
             <ChevronRight size={24} />
           </button>
 
-          {/* Carousel Indicators */}
-          <div className="flex justify-center mt-8 space-x-2">
-            {projects.map((_, index) => (
+          <div className="mt-8 flex justify-center gap-2">
+            {projects.map((project, index) => (
               <button
-                key={index}
+                key={project.slug}
                 onClick={() => setCurrentProjectIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  index === currentProjectIndex 
-                    ? 'bg-slate-300' 
-                    : 'bg-gray-600 hover:bg-gray-500'
+                aria-label={`Go to ${project.title}`}
+                className={`h-3 w-3 cursor-pointer rounded-full transition ${
+                  index === currentProjectIndex
+                    ? 'bg-cyan-200'
+                    : 'bg-white/20 hover:bg-white/40'
                 }`}
               />
             ))}
           </div>
         </div>
       </div>
-
-      {/* Project Modal */}
-      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </section>
   );
 };
