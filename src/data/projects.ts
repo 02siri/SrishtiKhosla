@@ -23,6 +23,41 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
+    slug: "devfinder",
+    title: "DevFinder",
+    tagline: "Full-stack social networking platform and real-time chat for software developers",
+    description:
+      "A full-stack social connection platform for developers featuring matchmaking, real-time secure WebSocket chat, daily email summaries, and premium subscriptions integrated with Stripe.",
+    image: "/projects/DevFinder/devfinder.png",
+    tech: ["React.js", "Vite", "Redux Toolkit", "Tailwind CSS", "Express.js", "Node.js", "MongoDB", "Socket.io", "AWS SES", "Stripe"],
+    github: "https://github.com/02siri/Dev-Finder",
+    live: "https://dev-finder.online",
+    walkthrough:
+      "https://drive.google.com/file/d/1qvWsZd2BNCEeFTG0J9zBoRXWW4U5UUlt/view?usp=sharing",
+    accent: {
+      from: "#4f46e5",
+      to: "#06b6d4",
+      glow: "rgba(6, 182, 212, 0.25)",
+    },
+    overview:
+      "DevFinder is a comprehensive social networking and collaboration platform designed specifically for software developers. The frontend client (built with Vite, React, Tailwind CSS, and Redux Toolkit) connects to a Node/Express backend handling database persistence, real-time WebSockets, Stripe subscription payments, and AWS SES notifications.",
+    highlights: [
+      "Designed and implemented a real-time messaging system using Socket.io with secure cookie authentication.",
+      "Integrated Stripe payments and webhook handling to manage premium subscriptions and account upgrades.",
+      "Built automated background services with node-cron and AWS Simple Email Service (SES) to send daily activity summaries.",
+    ],
+    features: [
+      "Developer matching discovery feed and interactive connection requests",
+      "Real-time secure chat messaging with dynamic notification indicators",
+      "Cookie-based credential management and Redux state synchronization",
+      "Stripe payment checkout portal and webhook integration for premium status",
+      "Automated daily email digests powered by AWS SES and scheduled via node-cron",
+    ],
+    challenge:
+      "Synchronizing client state, real-time socket connections, and database records securely without introducing latency required designing a decoupled event-driven architecture and implementing optimistic UI updates in Redux.",
+  },
+  {
+    id: 2,
     slug: "woven-monopoly",
     title: "Woven Monopoly",
     tagline: "A digital Monopoly-style experience built for gameplay, clarity, and momentum",
@@ -56,7 +91,7 @@ export const projects: Project[] = [
       "Game interfaces can become noisy quickly, especially when rules and state updates stack up. This build focuses on keeping core actions visible and the board experience understandable without sacrificing energy.",
   },
   {
-    id: 2,
+    id: 3,
     slug: "streamgpt",
     title: "StreamGPT",
     tagline: "AI-powered movie discovery experience with streaming-first interactions",
@@ -88,7 +123,7 @@ export const projects: Project[] = [
       "The main design challenge was making discovery feel engaging instead of overwhelming. The interface leans on hierarchy, strong previews, and quick actions so users can move from curiosity to selection without friction.",
   },
   {
-    id: 3,
+    id: 4,
     slug: "loopedin",
     title: "LoopedIn",
     tagline: "Serverless music subscription platform backed by AWS cloud services",
@@ -131,7 +166,7 @@ export const projects: Project[] = [
       "The core engineering tradeoff was balancing a smooth user experience with distributed cloud services. The project shows how product UX and cloud architecture can work together instead of being treated separately.",
   },
   {
-    id: 4,
+    id: 5,
     slug: "teachteam",
     title: "TeachTeam",
     tagline: "Collaborative education platform for teams, assignments, and project coordination",
@@ -173,7 +208,7 @@ export const projects: Project[] = [
       "Educational products need information clarity more than flashy complexity. The main goal here was shaping collaborative features so teams could understand ownership, progress, and context without feeling lost.",
   },
   {
-    id: 5,
+    id: 6,
     slug: "burritoking",
     title: "BurritoKing",
     tagline: "Desktop food-ordering system with admin and customer management flows",
@@ -204,7 +239,7 @@ export const projects: Project[] = [
       "Desktop interfaces need clear structure because users cannot rely on familiar browser interaction patterns. This project puts emphasis on making restaurant operations approachable inside a custom GUI.",
   },
   {
-    id: 6,
+    id: 7,
     slug: "airstay",
     title: "AirStay",
     tagline: "Accommodation booking platform inspired by modern hospitality products",
@@ -235,7 +270,7 @@ export const projects: Project[] = [
       "Booking products depend heavily on trust and clarity. The project centers on making listing information, user actions, and reservation flows easy to follow without extra friction.",
   },
   {
-    id: 7,
+    id: 8,
     slug: "vetcare",
     title: "VetCare",
     tagline: "Clinic operations platform for appointments, records, and treatment workflows",
@@ -275,6 +310,7 @@ export const projects: Project[] = [
     challenge:
       "Healthcare-adjacent tools need structure and trustworthiness. This build emphasizes predictable data handling and workflow clarity so day-to-day clinic operations remain manageable.",
   },
+
 ];
 
 export const getProjectBySlug = (slug: string) =>

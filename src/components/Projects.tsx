@@ -53,7 +53,7 @@ const Projects = () => {
               </Link>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                {currentProject.tech.slice(0, 7).map((tech) => (
+                {currentProject.tech.map((tech) => (
                   <span
                     key={tech}
                     className="rounded-full border border-white/10 bg-slate-900/70 px-3 py-2 text-sm text-slate-200"
