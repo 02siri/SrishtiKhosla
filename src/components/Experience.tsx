@@ -5,6 +5,33 @@ import { motion } from 'framer-motion';
 const Experience = () => {
   const experience = [
     {
+      id: 3,
+      role: "Integration & Automation Developer Intern",
+      description: "AI Agents, API Integrations & Automation",
+      company: "C9 Group",
+      duration: "September 2026 - Present",
+      location: "Melbourne, Australia",
+      achievements: [
+        "Built and configured AI operational agents in HaloPSA for quote creation, translating business rules and decision points into multiple runbooks, updating prompt instructions and connecting runbooks with chat flows and business logic.",
+        "Developed TypeScript and Express REST APIs to automate agreement preparation for e-signing and counter-signing across HaloPSA and PandaDoc, implementing signed PDF encryption and automated password management using integrations and webhooks.",
+        "Integrated EziDebit to register payers directly from signed direct debit authorities, validate customer and invoice details before scheduling debits, and check payment outcomes.",
+        "Shipped production features for C9X, including personal and business onboarding, business profile capture, conditional post-call summary emails and transcript settings."
+      ]
+    },
+    {
+      id: 4,
+      role: "Software Engineer Intern",
+      description: "Web & Mobile Application Development",
+      company: "Idea2Network Pty Ltd (BiteMate)",
+      duration: "July 2026 - September 2026",
+      location: "Melbourne, Australia",
+      achievements: [
+        "Investigated and resolved bugs across web and mobile applications, collaborating with developers and business stakeholders to support reliable production systems and deliver maintainable software improvements.",
+        "Contributed to C#/.NET development workflows in an Agile engineering environment, using Git and Azure DevOps for work items, sprint planning, branch management, code delivery and team collaboration.",
+        "Collaborated across the engineering team on troubleshooting, implementation and software improvements, gaining hands-on experience with React Native/Expo for mobile application development."
+      ]
+    },
+    {
       id: 1,
       role: "Software Developer",
       description: "Team Leader, Scrum Master & Dev Team Member",

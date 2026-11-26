@@ -11,14 +11,28 @@ const Hero = () => {
     {
       title: "Frontend",
       skills: [
-          { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+          { name: "Next.js", logo: "https://cdn.simpleicons.org/nextdotjs/white" },
         { name: "React.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
         { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
         { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
         { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
         { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-      { name: "Tailwind CSS", logo: "https://img.icons8.com/?size=100&id=4PiNHtUJVbLs&format=png&color=000000" },
-      { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" }
+      { name: "Tailwind CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+      { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+        { name: "Redux Toolkit", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
+        { name: "React Native", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/reactnative/reactnative-original.svg" },
+        { name: "Expo", logo: "https://cdn.simpleicons.org/expo/white" }
+      ]
+    },
+    {
+      title: "Languages",
+      skills: [
+        { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+        { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+        { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+        { name: "C#", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
+        { name: ".NET", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" },
+        { name: "SQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg" }
       ]
     },
     {
@@ -26,15 +40,23 @@ const Hero = () => {
       skills: [
         { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
         { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-        { name: "Express.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+        { name: "Express.js", logo: "https://cdn.simpleicons.org/express/white" },
         { name: "Spring Boot", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" },
-        { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-        { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-        { name: "SQLite", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" },
         { name: "GraphQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" },
+        { name: "JWT", logo: "https://cdn.simpleicons.org/jsonwebtokens/white" },
+        { name: "Socket.IO", logo: "https://cdn.simpleicons.org/socketdotio/white" },
         { name: "TypeORM", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
         { name: "Maven", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg" },
-        { name: "Flyway", logo: "https://camo.githubusercontent.com/821c82c9e0f2e8df2c413fe555037e4bbfd69a6b686b039ee94dcf6f534977a4/68747470733a2f2f646f63756d656e746174696f6e2e7265642d676174652e636f6d2f646f776e6c6f61642f6174746163686d656e74732f3133383334363837362f46443f76657273696f6e3d33266d6f64696669636174696f6e446174653d31363333393832383639393532266170693d7632" },
+      ]
+    },
+    {
+      title: "Databases",
+      skills: [
+        { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+        { name: "DynamoDB", logo: "/aws-icons/Arch_Amazon-DynamoDB_16.svg" },
+        { name: "SQLite", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" },
+        { name: "Flyway", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flyway/flyway-original.svg" },
         { name: "JDBC", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" }
       ]
     },
@@ -42,9 +64,9 @@ const Hero = () => {
       title: "UI/UX",
       skills: [
         { name: "JavaFX", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-        { name: "SceneBuilder", logo: "https://img.icons8.com/?size=100&id=BZz399uT6eo0&format=png&color=000000" },
-        { name: "Chakra UI", logo: "https://img.icons8.com/?size=100&id=r9QJ0VFFrn7T&format=png&color=000000" },
-        { name: "Framer Motion", logo: "https://img.icons8.com/?size=100&id=XKFRdQOs24QU&format=png&color=000000" },
+        { name: "SceneBuilder", logo: "https://img.icons8.com/?size=100&id=BZz399uT6eo0&format=png&color=ffffff" },
+        { name: "Chakra UI", logo: "https://cdn.simpleicons.org/chakraui" },
+        { name: "Framer Motion", logo: "https://cdn.simpleicons.org/framer/white" },
         { name: "Recharts", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" }
       ]
     },
@@ -52,19 +74,25 @@ const Hero = () => {
       title: "Cloud",
       skills: [
         { name: "AWS S3", logo: "/aws-icons/Arch_Amazon-Simple-Storage-Service_16.svg" },
-        { name: "AWS DynamoDB", logo: "/aws-icons/Arch_Amazon-DynamoDB_16.svg" },
         { name: "AWS EC2", logo: "/aws-icons/Arch_Amazon-EC2_16.svg" },
         { name: "AWS Lambda", logo: "/aws-icons/Arch_AWS-Lambda_16.svg" },
         { name: "AWS API Gateway", logo: "/aws-icons/Arch_Amazon-API-Gateway_16.svg" },
-        { name: "Azure Data Studio", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" }
+        { name: "AWS SES", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" },
+        { name: "AWS CloudWatch", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" },
+        { name: "Azure Data Studio", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
+        { name: "Firebase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+        { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel/white" }
       ]
     },
     {
       title: "DevOps",
       skills: [
-        { name: "GitHub", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-        { name: "GitHub Actions", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-        { name: "Docker", logo: "https://img.icons8.com/?size=100&id=cdYUlRaag9G9&format=png&color=000000"}
+        { name: "GitHub", logo: "https://cdn.simpleicons.org/github/white" },
+        { name: "GitHub Actions", logo: "https://cdn.simpleicons.org/github/white" },
+        { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"},
+        { name: "Azure DevOps", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg" },
+        { name: "Nginx", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" },
+        { name: "PM2", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pm2/pm2-original.svg" }
       ]
     },
     {
@@ -73,7 +101,19 @@ const Hero = () => {
         { name: "Jest", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" },
         { name: "Selenium", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" },
         { name: "JUnit", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-        { name: "JMeter", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" }
+        { name: "JMeter", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" },
+        { name: "React Testing Library", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Postman", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" }
+      ]
+    },
+    {
+      title: "AI Tools",
+      skills: [
+        { name: "Gemini AI", logo: "https://cdn.simpleicons.org/googlegemini/white" },
+        { name: "Codex", logo: "https://cdn.jsdelivr.net/npm/@lobehub/icons-static-svg@latest/icons/codex-color.svg" },
+        { name: "Antigravity", logo: "https://cdn.jsdelivr.net/npm/@lobehub/icons-static-svg@latest/icons/antigravity-color.svg" },
+        { name: "Claude", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/claude/claude-original.svg" },
+        { name: "GitHub Copilot", logo: "https://cdn.simpleicons.org/githubcopilot/white" }
       ]
     },
     {
@@ -82,7 +122,8 @@ const Hero = () => {
         { name: "Jira", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" },
         { name: "SpiraPlan", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg" },
         { name: "Zephyr Squad", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" },
-        { name: "GitHub Projects", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" }
+        { name: "Confluence", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg" },
+        { name: "GitHub Projects", logo: "https://cdn.simpleicons.org/github/white" }
       ]
     }
   ];
